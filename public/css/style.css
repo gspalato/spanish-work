@@ -1,0 +1,16 @@
+:root {
+    --background-color: #111;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    background-color: var(--background-color);
+}
+
+button {
+    all: unset;
+}
