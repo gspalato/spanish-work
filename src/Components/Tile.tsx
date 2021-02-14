@@ -7,20 +7,24 @@ const StyledTile = styled.div`
 `;
 
 type TileProps = {
-    Anchor: string,
+    Name: string,
 }
 
 export class Tile extends React.Component<TileProps>
 {
+    public Name: string;
+
     constructor(props: TileProps)
     {
         super(props);
+
+        this.Name = this.props.Name;
     }
 
     public render()
     {
         return (
-            <StyledTile data-anchor={this.props.Anchor} className="gs-tile">
+            <StyledTile className="gs-tile" data-anchor={this.props.Name}>
                 {this.props.children}
             </StyledTile>
         )
