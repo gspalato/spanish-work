@@ -1,5 +1,6 @@
 :root {
-    --background-color: #111;
+    --background-color: #000;
+    --title-font: 
 }
 
 * {
@@ -13,4 +14,18 @@ html, body {
 
 button {
     all: unset;
+}
+
+::-webkit-scrollbar {
+    width: 5px !important;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, .125);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, .375);
 }
