@@ -1,3 +1,4 @@
+/* Pageable */
 declare module 'pageable';
 
 type PageableData = {
