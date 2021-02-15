@@ -20,6 +20,7 @@ var StyledTile = styled.div<StyledTileProps>`
 
 /* Main component */
 type TileProps = {
+    Alternate?: boolean,
     Name: string,
     Landing?: boolean,
     Background?: string,
@@ -41,7 +42,7 @@ export class Tile extends React.Component<TileProps>
     {
         return (
             <StyledTile className="gs-tile" data-anchor={this.props.Name} id={this.props.Name.toLowerCase()}
-            BackgroundColor={this.props.Background || "transparent"}
+            BackgroundColor={this.props.Alternate ? "#111111" : (this.props.Background || "transparent")}
             Height={this.props.Landing ? "100vh" : "95vh"}
             OverflowX={this.props.HideOverflowX ? "hidden" : "unset"}
             OverflowY={this.props.HideOverflowY ? "hidden" : "unset"}>

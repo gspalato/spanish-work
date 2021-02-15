@@ -24,17 +24,6 @@ export class TileContainer extends React.Component<TileContainerProps>
         React.Children.forEach(this.props.children, child => {
             this.Anchors.push(child);
         });
-
-        /*
-        (window as any).Pageable = new Pageable("#tile-container", {
-            pips: true,
-
-            onScroll: function(data: PageableData)
-            {
-                
-            }
-        });
-        */
     }
 
     public render()

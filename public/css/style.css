@@ -3,7 +3,8 @@
 
 :root {
     --background-color: #000;
-    --title-font: 'San Francisco Display Bold';
+    --title-font: 'Montserrat', sans-serif;
+    --text-font: 'Mulish', sans-serif;
 }
 
 * {
@@ -17,6 +18,13 @@ html, body {
 
 h1 {
     font-family: var(--title-font);
+    font-size: 5em;
+    font-weight: bold;
+    user-select: none;
+}
+
+p {
+    font-family: var(--text-font);
 }
 
 button {
@@ -41,4 +49,13 @@ button {
 .gs-abs-hcenter {
     left: 50%;
     transform: translate(-50%, 0);
+}
+
+.gs-smootht {
+    transition: 2s ease;
+}
+
+.gs-fadeIn {
+    animation: gs-fadeIn;
+    animation-duration: 3s;
 }

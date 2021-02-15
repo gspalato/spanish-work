@@ -7,3 +7,6 @@ type PageableData = {
     max: number,
     percent: number
 }
+
+/* react-animejs */
+declare module 'react-animejs';
