@@ -1,6 +1,9 @@
+@import './animations.css';
+@import './fonts.css';
+
 :root {
     --background-color: #000;
-    --title-font: 
+    --title-font: 'San Francisco Display Bold';
 }
 
 * {
@@ -10,6 +13,10 @@
 
 html, body {
     background-color: var(--background-color);
+}
+
+h1 {
+    font-family: var(--title-font);
 }
 
 button {
@@ -28,4 +35,10 @@ button {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, .375);
+}
+
+/* Special classes */
+.gs-center-horizontal-absolute {
+    left: 50%;
+    transform: translate(-50%, 0);
 }
