@@ -3,40 +3,38 @@ import Pageable from 'pageable';
 import React from 'react';
 import styled from 'styled-components';
 
-import { Animate } from '../Components/Animate';
+import { ScrollAnimate } from '../Components/ScrollAnimate';
 import { Tile } from "../Components/Tile";
+import { TileContainer } from "../Components/TileContainer";
 
 import 'aos/dist/aos.css'
 
 // Styled components
-var Container = styled.div`
-    height: 100vh;
-    width: 100vw;
-`;
-
-var StaticsContainer = styled.div`
-    position: fixed;
-
-    height: inherit;
-    width: inherit;
-`;
-
-var TileContainer = styled.div`
-    height: 100vh;
-    width: 100vw;
-`;
-
 var ProfileImage = styled.img`
-    position: fixed;
-
-    border-radius: 50%;
-
+    position: absolute;
     height: 6.5vh;
     width: auto;
+    left: 40px;
+    top: 40px;
 
-    left: .75vw;
-    top: 1vh;
-`
+    animation: gs-slide-right .75s;
+    animation-delay: .5s;
+    animation-timing-function: ease-in-out;
+`;
+
+var BouncingScrollArrow = styled.img`
+    display: block;
+    position: absolute;
+    height: 5vh;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 95vh;
+
+    -webkit-animation: gs-bounce 3s infinite;
+    -moz-animation: gs-bounce 3s infinite;
+    animation: gs-bounce 3s infinite;
+`;
 
 // Main component
 export class MainPage extends React.Component
@@ -44,35 +42,26 @@ export class MainPage extends React.Component
     public componentDidMount()
     {
         AOS.init();
-
-        /*new Pageable("#tiles", {
-            pips: true,
-
-            onInit: function(data: PageableData)
-            {
-                
-            }
-        });*/
     }
 
     public render()
     {
         return (
-            <Container id="container">
-                <StaticsContainer id="statics">
-                    <ProfileImage src="img/pfp.png"/>
-                </StaticsContainer>
-                <TileContainer id="tiles">
-                    <Tile Name="Título">
-                        <h1>bien, nada.</h1>
-                    </Tile>
-                    <Tile Name="Introducción">
-                        <Animate Animation="fade-up">
-                            <h1>fade-up animation</h1>
-                        </Animate>
-                    </Tile>
-                </TileContainer>
-            </Container>
+            <TileContainer>
+                <Tile Landing HideOverflowX Name="Título">
+                    <ScrollAnimate Animation="slide-right" Offset={-200}>
+                        <ProfileImage src="img/gslogo.svg"/>
+                    </ScrollAnimate>
+                    <BouncingScrollArrow
+                    src="img/thin_arrow_white.png"
+                    className="gs-center-horizontal-absolute"></BouncingScrollArrow>
+                </Tile>
+                <Tile Name="Introducción" Background="#ffffff">
+                    <ScrollAnimate Animation="fade-up">
+                        <h1>fade-up animation</h1>
+                    </ScrollAnimate>
+                </Tile>
+            </TileContainer>
         )
     };
 }
