@@ -38,7 +38,7 @@ button {
 }
 
 /* Special classes */
-.gs-center-horizontal-absolute {
+.gs-abs-hcenter {
     left: 50%;
     transform: translate(-50%, 0);
 }
