@@ -1,6 +1,6 @@
 import React from 'react';
 
-type AnimateProps = {
+interface IAnimateProps {
     Animation: string,
     Anchor?: string,
     Delay?: number,
@@ -11,7 +11,7 @@ type AnimateProps = {
     Once?: boolean,
 }
 
-export class ScrollAnimate extends React.Component<AnimateProps>
+export class ScrollAnimate extends React.Component<IAnimateProps>
 {
     public render()
     {

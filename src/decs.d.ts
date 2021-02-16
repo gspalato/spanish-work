@@ -10,3 +10,6 @@ type PageableData = {
 
 /* react-animejs */
 declare module 'react-animejs';
+
+/* jquery */
+declare module 'jquery';

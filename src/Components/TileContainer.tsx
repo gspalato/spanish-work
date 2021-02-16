@@ -6,16 +6,18 @@ import { Tile } from '../Components/Tile';
 
 // Styled components
 var Container = styled.div`
-    height: 100vh;
+    height: fit-to-content;
     width: inherit;
+
+    z-index: 1;
 `;
 
 // Main component
-type TileContainerProps = {
+interface ITileContainerProps {
     children: React.ReactElement<Tile>[]
 }
 
-export class TileContainer extends React.Component<TileContainerProps>
+export class TileContainer extends React.Component<ITileContainerProps>
 {
     public Anchors: React.ReactElement<Tile>[] = [];
 

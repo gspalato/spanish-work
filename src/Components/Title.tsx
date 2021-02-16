@@ -2,22 +2,25 @@ import React from 'react';
 import styled from 'styled-components';
 
 /* Styled components */
-interface TitleProps {
+interface ITitleProps {
     Black?: boolean,
 
     Color?: string,
+    Font?: string,
     Gradient?: string,
     Size?: string,
-    Font?: string,
+
+    Style?: string,
 };
 
-var StyledTitle = styled.h1<TitleProps>`
+var StyledTitle = styled.h1<ITitleProps>`
     color: ${props => props.Black ? "#000000" : (props.Color || "#ffffff")} !important;
     font-family: ${props => props.Font || "var(--title-font)"};
     font-size: ${props => props.Size};
+    ${props => props.Style || ""}
 `;
 
-export class Title extends React.Component<TitleProps>
+export class Title extends React.Component<ITitleProps>
 {
     public render()
     {
@@ -25,8 +28,9 @@ export class Title extends React.Component<TitleProps>
             <StyledTitle
             Black={this.props.Black}
             Color={this.props.Color}
+            Font={this.props.Font}
             Size={this.props.Size}
-            Font={this.props.Font}>
+            Style={this.props.Style}>
                 {this.props.children}
             </StyledTitle>
         );

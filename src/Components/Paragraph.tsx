@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 /* Styled components */
-interface ParagraphProps {
+interface IParagraphProps {
     Black?: boolean,
 
     Color?: string,
@@ -11,13 +11,14 @@ interface ParagraphProps {
     Font?: string,
 };
 
-var StyledParagraph = styled.p<ParagraphProps>`
+var StyledParagraph = styled.p<IParagraphProps>`
     color: ${props => props.Black ? "#000000" : (props.Color || "#ffffff")} !important;
-    font-family: ${props => props.Font || "var(--title-font)"};
-    font-size: ${props => props.Size || "revert"};
+    font-family: ${props => props.Font || "var(--text-font)"};
+    font-size: ${props => props.Size || "7vh"};
+    letter-spacing: .2px;
 `;
 
-export class Paragraph extends React.Component<ParagraphProps>
+export class Paragraph extends React.Component<IParagraphProps>
 {
     public render()
     {

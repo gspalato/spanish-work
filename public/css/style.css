@@ -4,7 +4,7 @@
 :root {
     --background-color: #000;
     --title-font: 'Montserrat', sans-serif;
-    --text-font: 'Mulish', sans-serif;
+    --text-font: 'Open Sans', sans-serif;
 }
 
 * {
@@ -55,7 +55,16 @@ button {
     transition: 2s ease;
 }
 
-.gs-fadeIn {
+.gs-fadeIn, [data-aos="simple-fade"] {
     animation: gs-fadeIn;
     animation-duration: 3s;
+}
+
+[data-aos="simple-fade"] {
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: 3s;
+}
+[data-aos="simple-fade"].aos-animate {
+    opacity: 1;
 }
