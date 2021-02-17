@@ -1,8 +1,15 @@
 import AOS from 'aos';
+import anime from 'animejs';
 import React from 'react';
 import styled from 'styled-components';
+import SR from 'scrollreveal';
+
+import { FaEquals, FaNotEqual } from 'react-icons/fa';
+/*import EqualsSymbol from 'img/equality_symbols/equals.svg';*/
 
 import { ScrollAnimate } from '../Components/ScrollAnimate';
+import { ScrollReveal } from '../Components/ScrollReveal';
+import { Tab } from '../Components/Tab';
 import { Tile } from "../Components/Tile";
 import { TileContainer } from "../Components/TileContainer";
 import { Title } from "../Components/Title";
@@ -83,11 +90,13 @@ var Footer = styled.footer`
 	bottom: 0;
 `;
 
-var SpotifyLogo = styled.img`
-	display: inline-block;
-	height: 3vh;
-	width: 3vh;
-`
+var EqualsBar = styled.div`
+	height: 20vw;
+	width: 100%;
+
+	background: transparent;
+	border: 3px solid white;
+`;
 
 // Main component
 export class MainPage extends React.Component
@@ -95,6 +104,17 @@ export class MainPage extends React.Component
 	public componentDidMount()
 	{
 		AOS.init();
+		SR().reveal(".gs-scrollreveal", { reset: true });
+
+		anime({
+			targets: '.gs-expr-icon path',
+			strokeDashoffset: [anime.setDashoffset, 0],
+			easing: 'easeInOutSine',
+			duration: 4500,
+			delay: function(el, i) { return i * 250 },
+			direction: 'alternate',
+			loop: true
+		});
 	}
 
 	public render()
@@ -115,12 +135,12 @@ export class MainPage extends React.Component
 						</ScrollAnimate>
 					</Tile>
 					<Tile Name="Introducción" Alternate Flex FlexDirection="column" AlignItems="center">
-						<ScrollAnimate Animation="fade-in">
-							<Title Style="padding-top:5vh;">Introducción</Title>
-						</ScrollAnimate>
+						<Title Style="padding-top:5vh;">Introducción</Title>
 						<FlexChild Grow Padding="0 0 5vh 0">
 							<Flex Grow Height="100%" Width="100%" JustifyContent="center" AlignItems="center">
-								<Paragraph Size="2vh">Lorem ipsum alexandrem isim...</Paragraph>
+								<Paragraph Size="1.1vw">
+									Lorem ipsum alexandrem isim...
+								</Paragraph>
 							</Flex>
 						</FlexChild>
 					</Tile>
@@ -128,39 +148,83 @@ export class MainPage extends React.Component
 						<Flex Grow>
 							<FlexChild Grow>
 								<Flex Grow Height="100%" FlexDirection="column" AlignItems="center">
-									<FlexChild Padding="5vh 0 0 0">
-										<Title>Igualdad</Title>
+									<FlexChild Padding="7.5vh 0 0 0">
+										<Title className="gs-equality-text-gradient">Igualdad</Title>
 									</FlexChild>
-									<FlexChild Grow Padding="0 0 10vh 0">
-										<Flex Grow Height="100%" FlexDirection="column" JustifyContent="center">
-											<Paragraph Size="2vh">Lorem ipsum alexandrem isim...</Paragraph>
+									<FlexChild Grow Padding="0 0 15vh 0">
+										<Flex Grow Height="100%" Width="100%" FlexDirection="column" JustifyContent="center" AlignItems="center" TextAlign="left">
+											<div style={{textAlign:"left"}}>
+												<Paragraph Size="1.1vw">
+													<Tab Size={8}/>Los comparativos de igualdad expresan una correlación<br></br>
+													entre dos personas o cosas, que tienen la mesma cantidad<br></br>
+													de una calidad como la otra.
+												</Paragraph>
+												<Paragraph Size="1.1vw">
+													<Tab Size={8}/>Para cualidads que son adjetivos o adverbios, se utiliza la<br></br>
+													palabra "tan". De lo contrario, caso la calidad sea un sustantivo,<br></br>
+													se usa "tanto". En todas las ocasiones, la comparación termina<br></br>
+													en "como".
+												</Paragraph>
+											</div>
 										</Flex>
+										<FlexChild Style="position:relative;bottom:10vh;" Padding="4vh 0 4vh 0">
+											<Flex Grow Height="100%" Width="100%" FlexDirection="column" JustifyContent="center" AlignItems="center" TextAlign="justify">
+												<Paragraph Font="'Roboto Mono'" Size="1.3vw">
+													"Todos ellos son <i>tan</i> ricos <i>como</i> ellas."
+												</Paragraph>
+												<Paragraph Font="'Roboto Mono'" Size="1.3vw">
+													"Ellas se preguntan <i>tantos</i> porqués <i>como</i> nosotros"
+												</Paragraph>
+											</Flex>
+										</FlexChild>
 									</FlexChild>
 								</Flex>
 							</FlexChild>
 							<FlexChild Grow>
 								<Flex Grow Height="100%" JustifyContent="center" AlignItems="center">
-									{/* Insert something here */}
+									<FaEquals className="gs-expr-icon"/>
 								</Flex>
 							</FlexChild>
 						</Flex>
 					</Tile>
 					<Tile Name="Desigualdad" Alternate Flex FlexDirection="column" AlignItems="right">
-					<Flex Grow>
+						<Flex Grow>
 							<FlexChild Grow>
 								<Flex Grow Height="100%" JustifyContent="center" AlignItems="center">
-									{/* Insert something here */}
+									<FaNotEqual className="gs-expr-icon"/>
 								</Flex>
 							</FlexChild>
 							<FlexChild Grow>
 								<Flex Grow Height="100%" FlexDirection="column" AlignItems="center">
-									<FlexChild Padding="5vh 0 0 0">
-										<Title>Desigualdad</Title>
+									<FlexChild Padding="7.5vh 0 0 0">
+										<Title className="gs-inequality-text-gradient">Desigualdad</Title>
 									</FlexChild>
-									<FlexChild Grow Padding="0 0 10vh 0">
-										<Flex Grow Height="100%" FlexDirection="column" JustifyContent="center">
-											<Paragraph Size="2vh">Lorem ipsum alexandrem isim...</Paragraph>
+									<FlexChild Grow Padding="0 0 15vh 0">
+										<Flex Grow Height="100%" Width="100%" FlexDirection="column" JustifyContent="center" AlignItems="center" TextAlign="left">
+											<div style={{textAlign:"left"}}>
+												<Paragraph Size="1.1vw">
+													<Tab Size={8}/>Los comparativos de igualdad expresan una correlación<br></br>
+													entre dos personas o cosas, que tienen la mesma cantidad<br></br>
+													de una calidad como la otra.
+												</Paragraph>
+												<Paragraph Size="1.1vw">
+													<Tab Size={8}/>Para cualidads que son adjetivos o adverbios, se utiliza la<br></br>
+													palabra "tan". De lo contrario, caso la calidad sea un sustantivo,<br></br>
+													se usa "tanto". En todas las ocasiones, la comparación termina<br></br>
+													en "como".
+												</Paragraph>
+											</div>
 										</Flex>
+										<FlexChild Style="position:relative;bottom:10vh;" Padding="4vh 0 4vh 0">
+											<Flex Grow Height="100%" Width="100%" FlexDirection="column" JustifyContent="center" AlignItems="center" TextAlign="justify">
+												<Paragraph Font="'Roboto Mono'" Size="1.3vw">
+													"Todos ellos son <i>tan</i> ricos <i>como</i> ellas."
+												</Paragraph>
+												<Paragraph Font="'Roboto Mono'" Size="1.3vw">
+													"Ellas se preguntan <i>tantos</i> porqués <i>como</i> nosotros"
+												</Paragraph>
+											</Flex>
+										</FlexChild>
 									</FlexChild>
 								</Flex>
 							</FlexChild>
@@ -168,7 +232,10 @@ export class MainPage extends React.Component
 					</Tile>
 				</TileContainer>
 				<Footer>
-					<Paragraph Size="2vh">Hecho con ❤️ por Gabriel Spalato</Paragraph>
+					<Paragraph
+					Gradient="linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045)"
+					Size="1.25em"
+					Weight="bold">Hecho con ❤️ por Gabriel Spalato.</Paragraph>
 				</Footer>
 			</React.Fragment>
 		)

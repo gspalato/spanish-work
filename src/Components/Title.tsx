@@ -6,6 +6,7 @@ interface ITitleProps {
     Black?: boolean,
 
     Color?: string,
+    className?: string,
     Font?: string,
     Gradient?: string,
     Size?: string,
@@ -26,6 +27,7 @@ export class Title extends React.Component<ITitleProps>
     {
         return (
             <StyledTitle
+            className={this.props.className}
             Black={this.props.Black}
             Color={this.props.Color}
             Font={this.props.Font}

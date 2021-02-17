@@ -60,6 +60,27 @@ button {
     animation-duration: 3s;
 }
 
+.gs-expr-icon {
+    height: 50vh;
+    width: auto;
+
+    stroke-width: 5px;
+    fill: none;
+
+    color: #fff;
+}
+
+.gs-equality-text-gradient {
+    background: linear-gradient(135deg, #00c9ff, #92fe9d);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.gs-inequality-text-gradient {
+    background: linear-gradient(135deg, #f857a6, #ff5858);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
 [data-aos="simple-fade"] {
     opacity: 0;
     transition-property: transform, opacity;

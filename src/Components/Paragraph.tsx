@@ -4,18 +4,24 @@ import styled from 'styled-components';
 /* Styled components */
 interface IParagraphProps {
     Black?: boolean,
-
     Color?: string,
+    Font?: string,
     Gradient?: string,
     Size?: string,
-    Font?: string,
+    Weight?: string,
 };
 
 var StyledParagraph = styled.p<IParagraphProps>`
     color: ${props => props.Black ? "#000000" : (props.Color || "#ffffff")} !important;
     font-family: ${props => props.Font || "var(--text-font)"};
     font-size: ${props => props.Size || "7vh"};
+    font-weight: ${props => props.Weight || ""};
     letter-spacing: .2px;
+    overflow-wrap: normal;
+
+    background: ${props => !!props?.Gradient?.length && props.Gradient};
+	-webkit-background-clip: ${props => !!props?.Gradient?.length && "text"};
+	-webkit-text-fill-color: ${props => !!props?.Gradient?.length && "transparent"};
 `;
 
 export class Paragraph extends React.Component<IParagraphProps>
@@ -24,10 +30,12 @@ export class Paragraph extends React.Component<IParagraphProps>
     {
         return (
             <StyledParagraph
-            Black={this.props.Black}
-            Color={this.props.Color}
-            Size={this.props.Size}
-            Font={this.props.Font}>
+            Black={this.props.Black ?? false}
+            Color={this.props.Color ?? ""}
+            Font={this.props.Font ?? ""}
+            Gradient={this.props.Gradient ?? ""}
+            Size={this.props.Size ?? ""}
+            Weight={this.props.Weight ?? ""}>
                 {this.props.children}
             </StyledParagraph>
         );

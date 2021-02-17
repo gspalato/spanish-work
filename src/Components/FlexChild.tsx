@@ -9,6 +9,7 @@ interface IStyledFlexChildProps {
     JustifyContent: string,
     Margin: string,
     Padding: string,
+    Style: string,
     TextAlign: string,
 };
 
@@ -24,6 +25,8 @@ var StyledFlexChild = styled.div<IStyledFlexChildProps>`
 
     margin: ${props => props.Margin};
     padding: ${props => props.Padding};
+
+    ${props => props.Style}
 `;
 
 /* Main component */
@@ -34,6 +37,7 @@ interface IFlexChildProps {
     JustifyContent?: string,
     Margin?: string,
     Padding?: string,
+    Style?: string,
     TextAlign?: string,
 }
 
@@ -49,6 +53,7 @@ export class FlexChild extends React.Component<IFlexChildProps>
             JustifyContent={this.props.JustifyContent ?? ""}
             Margin={this.props.Margin ?? ""}
             Padding={this.props.Padding ?? ""}
+            Style={this.props.Style ?? ""}
             TextAlign={this.props.TextAlign ?? "none"}>
                 {this.props.children}
             </StyledFlexChild>
