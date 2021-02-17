@@ -4,7 +4,7 @@
 :root {
     --background-color: #000;
     --title-font: 'Montserrat', sans-serif;
-    --text-font: 'Open Sans', sans-serif;
+    --text-font: 'Noto Sans', sans-serif;
 }
 
 * {
@@ -73,11 +73,13 @@ button {
 .gs-equality-text-gradient {
     background: linear-gradient(135deg, #00c9ff, #92fe9d);
 	-webkit-background-clip: text;
+    background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 .gs-inequality-text-gradient {
     background: linear-gradient(135deg, #f857a6, #ff5858);
 	-webkit-background-clip: text;
+    background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 
