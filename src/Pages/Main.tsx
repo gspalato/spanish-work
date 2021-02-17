@@ -5,8 +5,9 @@ import styled from 'styled-components';
 import SR from 'scrollreveal';
 
 import { FaEquals, FaNotEqual } from 'react-icons/fa';
-/*import EqualsSymbol from 'img/equality_symbols/equals.svg';*/
 
+import { EqualsSymbol } from '../Components/EqualsSymbol';
+import { NotEqualSymbol } from '../Components/NotEqualSymbol';
 import { ScrollAnimate } from '../Components/ScrollAnimate';
 import { ScrollReveal } from '../Components/ScrollReveal';
 import { Tab } from '../Components/Tab';
@@ -135,12 +136,21 @@ export class MainPage extends React.Component
 						</ScrollAnimate>
 					</Tile>
 					<Tile Name="Introducción" Alternate Flex FlexDirection="column" AlignItems="center">
-						<Title Style="padding-top:5vh;">Introducción</Title>
-						<FlexChild Grow Padding="0 0 5vh 0">
+						<Title Style="padding-top:7.5vh;">Introducción</Title>
+						<FlexChild Grow Padding="0 0 15vh 0">
 							<Flex Grow Height="100%" Width="100%" JustifyContent="center" AlignItems="center">
-								<Paragraph Size="1.1vw">
-									Lorem ipsum alexandrem isim...
-								</Paragraph>
+								<div style={{textAlign:"left"}}>
+									<Paragraph Size="2.1vh" Spacing=".3px">
+										<Tab Size={8}/>La comparación es una idea aproximada del argumento, debido al énfasis<br></br>
+										en uno o más aspectos y cualidades de algún elemento.
+									</Paragraph>
+									<Paragraph Size="2.1vh" Spacing=".3px">
+										<Tab Size={8}/>Expresado solo por el lenguaje, hace necesaria la existencia de reglas,<br></br>
+										que son esenciales para otras organizaciones y composiciones más complejas del lenguaje<br></br>
+										como las cláusulas subordinadas adverbiales comparativas. Entonces, aquí se explican de<br></br>
+										forma concisa y sencilla. 
+									</Paragraph>
+								</div>
 							</Flex>
 						</FlexChild>
 					</Tile>
@@ -154,12 +164,12 @@ export class MainPage extends React.Component
 									<FlexChild Grow Padding="0 0 15vh 0">
 										<Flex Grow Height="100%" Width="100%" FlexDirection="column" JustifyContent="center" AlignItems="center" TextAlign="left">
 											<div style={{textAlign:"left"}}>
-												<Paragraph Size="1.1vw">
+												<Paragraph Size="2.1vh" Spacing=".3px">
 													<Tab Size={8}/>Los comparativos de igualdad expresan una correlación<br></br>
 													entre dos personas o cosas, que tienen la mesma cantidad<br></br>
 													de una calidad como la otra.
 												</Paragraph>
-												<Paragraph Size="1.1vw">
+												<Paragraph Size="2.1vh" Spacing=".3px">
 													<Tab Size={8}/>Para cualidads que son adjetivos o adverbios, se utiliza la<br></br>
 													palabra "tan". De lo contrario, caso la calidad sea un sustantivo,<br></br>
 													se usa "tanto". En todas las ocasiones, la comparación termina<br></br>
@@ -169,10 +179,10 @@ export class MainPage extends React.Component
 										</Flex>
 										<FlexChild Style="position:relative;bottom:10vh;" Padding="4vh 0 4vh 0">
 											<Flex Grow Height="100%" Width="100%" FlexDirection="column" JustifyContent="center" AlignItems="center" TextAlign="justify">
-												<Paragraph Font="'Roboto Mono'" Size="1.25vw">
+												<Paragraph Font="'Roboto Mono'" Size="2.25vh">
 													"Todos ellos son <i>tan</i> ricos <i>como</i> ellas."
 												</Paragraph>
-												<Paragraph Font="'Roboto Mono'" Size="1.25vw">
+												<Paragraph Font="'Roboto Mono'" Size="2.25vh">
 													"Ellas se preguntan <i>tantos</i> porqués <i>como</i> nosotros"
 												</Paragraph>
 											</Flex>
@@ -182,7 +192,8 @@ export class MainPage extends React.Component
 							</FlexChild>
 							<FlexChild Grow>
 								<Flex Grow Height="100%" JustifyContent="center" AlignItems="center">
-									<FaEquals className="gs-expr-icon"/>
+									{/*<FaEquals className="gs-expr-icon"/>*/}
+									<EqualsSymbol/>
 								</Flex>
 							</FlexChild>
 						</Flex>
@@ -191,7 +202,8 @@ export class MainPage extends React.Component
 						<Flex Grow>
 							<FlexChild Grow>
 								<Flex Grow Height="100%" JustifyContent="center" AlignItems="center">
-									<FaNotEqual className="gs-expr-icon"/>
+									{/*<FaNotEqual className="gs-expr-icon"/>*/}
+									<NotEqualSymbol />
 								</Flex>
 							</FlexChild>
 							<FlexChild Grow>
@@ -202,19 +214,19 @@ export class MainPage extends React.Component
 									<FlexChild Grow Padding="0 0 15vh 0">
 										<Flex Grow Height="100%" Width="100%" FlexDirection="column" JustifyContent="center" AlignItems="center" TextAlign="left">
 											<div style={{textAlign:"left"}}>
-												<Paragraph Size="1.1vw">
+												<Paragraph Size="2.1vh" Spacing=".3px">
 													<Tab Size={8}/>Las comparaciones de desigualdad se dividen en comparaciones<br></br>
 													de superioridad e inferioridad. En las comparaciones de superioridad se utiliza<br></br>
 													la palabra "más" seguida de la cualidad, ya sea sustantivo, adjetivo o adverbio<br></br>
 													y "que". La inferioridad se escribe de la misma manera que las comparaciones de<br></br>
 													superioridad, pero en su lugar utiliza la palabra "menos". 
 												</Paragraph>
-												<Paragraph Size="1.1vw">
+												<Paragraph Size="2.1vh" Spacing=".3px">
 													<Tab Size={8}/>Sin embargo, hay calidades "irregulares" que requieren una<br></br>
 													construcción diferente: mayor y mejor. Tales cualidades eliminan<br></br>
 													"más" y "menos" y reemplazan directamente con "es" junto con la calidad misma.
 												</Paragraph>
-												<Paragraph Size="1.1vw">
+												<Paragraph Size="2.1vh" Spacing=".3px">
 													<Tab Size={8}/><i>Mayor/manor</i> se refiere a la edad, mientras que<br></br>
 													<i>más grande/más pequeño</i> se refiere al tamaño. 
 												</Paragraph>
@@ -222,13 +234,13 @@ export class MainPage extends React.Component
 										</Flex>
 										<FlexChild Style="position:relative;bottom:10vh;" Padding="4vh 0 4vh 0">
 											<Flex Grow Height="100%" Width="100%" FlexDirection="column" JustifyContent="center" AlignItems="center" TextAlign="justify">
-												<Paragraph Font="'Roboto Mono'" Size="1.25vw">
+												<Paragraph Font="'Roboto Mono'" Size="2.25vh">
 													"Juan tiene <i>más</i> perros <i>que</i> yo. "
 												</Paragraph>
-												<Paragraph Font="'Roboto Mono'" Size="1.25vw">
+												<Paragraph Font="'Roboto Mono'" Size="2.25vh">
 													"Juan <i>es más pequeño que</i> yo."
 												</Paragraph>
-												<Paragraph Font="'Roboto Mono'" Size="1.25vw">
+												<Paragraph Font="'Roboto Mono'" Size="2.25vh">
 													"Yo soy <i>menos saudable que</i> usted."
 												</Paragraph>
 											</Flex>

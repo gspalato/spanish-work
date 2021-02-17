@@ -8,6 +8,7 @@ interface IParagraphProps {
     Font?: string,
     Gradient?: string,
     Size?: string,
+    Spacing?: string,
     Weight?: string,
 };
 
@@ -16,7 +17,7 @@ var StyledParagraph = styled.p<IParagraphProps>`
     font-family: ${props => props.Font || "var(--text-font)"};
     font-size: ${props => props.Size || "7vh"};
     font-weight: ${props => props.Weight || ""};
-    letter-spacing: .2px;
+    letter-spacing: ${props => props.Spacing || ".2px"};
     overflow-wrap: normal;
 
     background: ${props => !!props?.Gradient?.length && props.Gradient};
@@ -35,6 +36,7 @@ export class Paragraph extends React.Component<IParagraphProps>
             Font={this.props.Font ?? ""}
             Gradient={this.props.Gradient ?? ""}
             Size={this.props.Size ?? ""}
+            Spacing={this.props.Spacing}
             Weight={this.props.Weight ?? ""}>
                 {this.props.children}
             </StyledParagraph>

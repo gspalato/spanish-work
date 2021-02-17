@@ -66,6 +66,7 @@ button {
 
     stroke-width: 5px;
     fill: none;
+    overflow: visible;
 
     color: #fff;
 }
