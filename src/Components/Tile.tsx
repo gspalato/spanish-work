@@ -47,20 +47,12 @@ interface ITileProps {
 
 export class Tile extends React.Component<ITileProps>
 {
-    public Name: string;
-
-    constructor(props: ITileProps)
-    {
-        super(props);
-        this.Name = this.props.Name;
-    }
-
     public render()
     {
         return (
-            <StyledTile className="gs-tile" data-anchor={this.props.Name} id={this.props.Name.toLowerCase()}
+            <StyledTile id={this.props.Name} className="gs-tile" data-anchor={this.props.Name}
             AlignItems={this.props.AlignItems || ""}
-            BackgroundColor={this.props.Alternate ? "#090909" : (this.props.Background || "transparent")}
+            BackgroundColor={this.props.Alternate ? "#090909" : (this.props.Background || "#000000")}
             Display={this.props.Flex ? "flex" : ""}
             FlexDirection={this.props.FlexDirection || ""}
             Height={this.props.Landing ? "100vh" : "95vh"}

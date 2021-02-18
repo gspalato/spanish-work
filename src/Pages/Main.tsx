@@ -140,15 +140,15 @@ export class MainPage extends React.Component
 						<FlexChild Grow Padding="0 0 15vh 0">
 							<Flex Grow Height="100%" Width="100%" JustifyContent="center" AlignItems="center">
 								<div style={{textAlign:"left"}}>
-									<Paragraph Font="'Roboto Mono'" Spacing=".3px">
-										<Tab Size={4}/>La comparación es una idea aproximada del argumento, debido al énfasis<br></br>
-										en uno o más aspectos y cualidades de algún elemento.
+									<Paragraph Spacing=".3px">
+										<Tab Size={4}/>La comparación es una idea aproximada del argumento, debido<br></br>
+										al énfasis en uno o más aspectos y cualidades de algún elemento.
 									</Paragraph>
-									<Paragraph Font="'Roboto Mono'" Spacing=".3px">
-										<Tab Size={4}/>Expresado solo por el lenguaje, hace necesaria la existencia de reglas,<br></br>
-										que son esenciales para otras organizaciones y composiciones más complejas del lenguaje<br></br>
-										como las cláusulas subordinadas adverbiales comparativas. Entonces, aquí se explican de<br></br>
-										forma concisa y sencilla. 
+									<Paragraph Spacing=".3px">
+										<Tab Size={4}/>Expresado solo por el lenguaje, hace necesaria la existencia de<br></br>
+										reglas, que son esenciales para otras organizaciones y composiciones<br></br>
+										más complejas del lenguaje como las cláusulassubordinadas adverbiales<br></br>
+										comparativas. Entonces, aquí se explican de forma concisa y sencilla. 
 									</Paragraph>
 								</div>
 							</Flex>
@@ -164,12 +164,12 @@ export class MainPage extends React.Component
 									<FlexChild Grow Padding="0 0 15vh 0">
 										<Flex Grow Height="100%" Width="100%" FlexDirection="column" JustifyContent="center" AlignItems="center" TextAlign="left">
 											<div style={{textAlign:"left"}}>
-												<Paragraph Font="'Roboto Mono'" Spacing=".3px">
+												<Paragraph Spacing=".3px">
 													<Tab Size={4}/>Los comparativos de igualdad expresan una correlación<br></br>
 													entre dos personas o cosas, que tienen la mesma cantidad<br></br>
 													de una calidad como la otra.
 												</Paragraph>
-												<Paragraph Font="'Roboto Mono'" Spacing=".3px">
+												<Paragraph Spacing=".3px">
 													<Tab Size={4}/>Para cualidads que son adjetivos o adverbios, se utiliza la<br></br>
 													palabra "tan". De lo contrario, caso la calidad sea un sustantivo,<br></br>
 													se usa "tanto". En todas las ocasiones, la comparación termina<br></br>
@@ -214,24 +214,24 @@ export class MainPage extends React.Component
 									<FlexChild Grow Padding="0 0 15vh 0">
 										<Flex Grow Height="100%" Width="100%" FlexDirection="column" JustifyContent="center" AlignItems="center" TextAlign="left">
 											<div style={{textAlign:"left"}}>
-												<Paragraph Font="'Roboto Mono'" Spacing=".3px">
+												<Paragraph Spacing=".3px">
 													<Tab Size={4}/>Las comparaciones de desigualdad se dividen en comparaciones<br></br>
 													de superioridad e inferioridad. En las comparaciones de superioridad<br></br>
 													se utiliza la palabra "más" seguida de la cualidad, ya sea sustantivo,<br></br>
 													adjetivo o adverbio y "que".
 												</Paragraph>
-												<Paragraph Font="'Roboto Mono'" Spacing=".3px">
+												<Paragraph Spacing=".3px">
 													<Tab Size={4}/>La inferioridad se escribe de la misma manera que las<br></br>
 													comparaciones de superioridad, pero en su lugar utiliza la palabra<br></br>
 													"menos". 
 												</Paragraph>
-												<Paragraph Font="'Roboto Mono'" Spacing=".3px">
+												<Paragraph Spacing=".3px">
 													<Tab Size={4}/>Sin embargo, hay calidades "irregulares" que requieren una<br></br>
 													construcción diferente: mayor y mejor. Tales cualidades eliminan<br></br>
 													"más" y "menos" y reemplazan directamente con "es" junto con la<br></br>
 													calidad misma.
 												</Paragraph>
-												<Paragraph Font="'Roboto Mono'" Spacing=".3px">
+												<Paragraph Spacing=".3px">
 													<Tab Size={4}/><i>Mayor/manor</i> se refiere a la edad, mientras que<br></br>
 													<i>más grande/más pequeño</i> se refiere al tamaño. 
 												</Paragraph>
