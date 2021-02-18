@@ -15,7 +15,7 @@ interface IParagraphProps {
 var StyledParagraph = styled.p<IParagraphProps>`
     color: ${props => props.Black ? "#000000" : (props.Color || "#ffffff")} !important;
     font-family: ${props => props.Font || "var(--text-font)"};
-    font-size: ${props => props.Size || "7vh"};
+    font-size: ${props => props.Size || "2vh"};
     font-weight: ${props => props.Weight || ""};
     letter-spacing: ${props => props.Spacing || ".2px"};
     overflow-wrap: normal;
